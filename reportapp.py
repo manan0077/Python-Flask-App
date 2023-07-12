@@ -78,5 +78,4 @@ def serve_css():
     return reportapp.send_static_file('styles.css')
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(reportapp, host="0.0.0.0", port=207)
+    reportapp.run()
