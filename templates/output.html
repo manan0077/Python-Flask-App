@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Output</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .output-container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generated Output</h1>
+
+    <div class="output-container" id="data-to-copy">
+        <h2>Summaries:</h2>
+        <ul>
+            {% for summary in bullet_summaries[:10] %}
+                <li>{{ summary }}</li>
+            {% endfor %}
+
+        </ul>
+
+        <h2>Content Ideas:</h2>
+        <ul>
+            {% for idea in content_ideas[:10] %}
+                <li>{{ idea }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Twitter Tweets:</h2>
+        <ul>
+            {% for tweet in twitter_tweets[:10] %}
+                <li>{{ tweet }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>Estimated Cost: ${{ estimate_cost }} for {{ total_token_count }} tokens</p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+    <button id="copy-button">Copy Data</button>
+</body>
+</html>
