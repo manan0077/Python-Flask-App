@@ -9,7 +9,7 @@ reportapp.config['SESSION_TYPE'] = 'filesystem'
 Session(reportapp)
 
 @reportapp.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @reportapp.route('/generate', methods=['POST'])
