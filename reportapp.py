@@ -10,7 +10,7 @@ Session(reportapp)
 
 @reportapp.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @reportapp.route('/generate', methods=['POST'])
 def generate_output():
